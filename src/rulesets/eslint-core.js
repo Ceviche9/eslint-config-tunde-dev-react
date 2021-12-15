@@ -35,349 +35,99 @@ const createEslintCoreRules = ({
 
 
 const getPossibleErrorRules = ({ typescript: { hasTypeScript } }) => ({
-  /**
-   * @see https://eslint.org/docs/rules/for-direction
-   */
+
   'for-direction': 'error',
 
-  /**
-   * @see https://eslint.org/docs/rules/getter-return
-   * @see ts(2378)
-   */
   'getter-return': hasTypeScript ? 'off' : 'warn',
 
-  /**
-   * prevents usage of async within `new Promise`
-   *
-   * @see https://eslint.org/docs/rules/no-async-promise-executor
-   */
   'no-async-promise-executor': 'error',
 
-  /**
-   * prevents using async in for loop; `use Promise.all` instead
-   *
-   * @see https://eslint.org/docs/rules/no-await-in-loop
-   */
   'no-await-in-loop': 'error',
 
-  /**
-   * prevents comparing against negative zero
-   *
-   * @see https://eslint.org/docs/rules/no-compare-neg-zero
-   */
   'no-compare-neg-zero': 'error',
 
-  /**
-   * prevents assigning in condition
-   *
-   * @see https://eslint.org/docs/rules/no-cond-assign
-   */
   'no-cond-assign': ['warn', 'except-parens'],
 
-  /**
-   * prevents forgotten debug statements. either uncomment the line
-   * or remove the statement
-   *
-   * @see https://eslint.org/docs/rules/no-console
-   */
   'no-console': 'warn',
 
-  /**
-   * prevents inline constant conditions
-   *
-   * @see https://eslint.org/docs/rules/no-constant-condition
-   */
   'no-constant-condition': 'error',
 
-  /**
-   * prevents mistakenly using control characters in regex
-   *
-   * disable when really required
-   *
-   * @see https://eslint.org/docs/rules/no-control-regex
-   */
   'no-control-regex': 'warn',
 
-  /**
-   * prevents forgotten debug statements
-   *
-   * @see https://eslint.org/docs/rules/no-debugger
-   */
   'no-debugger': 'warn',
 
-  /**
-   * prevents duplicate function arg names
-   *
-   * @see https://eslint.org/docs/rules/
-   * @see ts(2300)
-   */
   'no-dupe-args': hasTypeScript ? 'off' : 'error',
 
-  /**
-   * prevents identical branches
-   *
-   * @see https://eslint.org/docs/rules/no-dupe-else-if
-   */
   'no-dupe-else-if': 'warn',
 
-  /**
-   * prevents duplicate keys in object
-   *
-   * @see https://eslint.org/docs/rules/
-   * @see ts(1117)
-   */
   'no-dupe-keys': hasTypeScript ? 'off' : 'warn',
 
-  /**
-   * prevens duplicate cases in switches
-   *
-   * @see https://eslint.org/docs/rules/no-duplicate-case
-   */
   'no-duplicate-case': 'warn',
 
-  /**
-   * prevents empty statements
-   *
-   * @see https://eslint.org/docs/rules/no-empty
-   */
   'no-empty': 'warn',
 
-  /**
-   * disallows empty character classes in regex
-   *
-   * @see https://eslint.org/docs/rules/no-empty-character-class
-   */
   'no-empty-character-class': 'warn',
 
-  /**
-   * disallows reassigning something in a catch clause
-   *
-   * @see https://eslint.org/docs/rules/no-ex-assign
-   */
   'no-ex-assign': 'warn',
 
-  /**
-   * prevents unecessary boolean casting in conditions
-   *
-   * @see https://eslint.org/docs/rules/no-extra-boolean-cast
-   */
   'no-extra-boolean-cast': 'warn',
 
-  /**
-   * off because handled by prettier
-   *
-   * @see https://eslint.org/docs/rules/no-extra-parens
-   */
   'no-extra-parens': 'off',
 
-  /**
-   * off because handled by prettier
-   *
-   * @see https://eslint.org/docs/rules/no-extra-semi
-   */
   'no-extra-semi': 'off',
 
-  /**
-   * prevents overwriting functions declared via `function` syntax
-   *
-   * @see https://eslint.org/docs/rules/no-func-assign
-   * @see ts(2539)
-   */
   'no-func-assign': hasTypeScript ? 'off' : 'warn',
 
-  /**
-   * disallows trying to overwrite imports
-   *
-   * @see https://eslint.org/docs/rules/no-import-assign
-   * @see ts(2539)
-   * @see ts(2540)
-   */
   'no-import-assign': hasTypeScript ? 'off' : 'error',
 
-  /**
-   * disallows variable or `function` declaration in nested blocks
-   *
-   * @see https://eslint.org/docs/rules/no-inner-declarations
-   */
   'no-inner-declarations': 'warn',
 
-  /**
-   * disallows invalid regexp
-   *
-   * @see https://eslint.org/docs/rules/no-invalid-regexp
-   */
   'no-invalid-regexp': 'error',
 
-  /**
-   * prevents the use of non-standard whitespace characters
-   *
-   * @see https://eslint.org/docs/rules/no-irregular-whitespace
-   */
   'no-irregular-whitespace': 'warn',
 
-  /**
-   * disallows the use of number literals that immediately lose precision at
-   * runtime due to 64-bit floating-point rounding
-   *
-   * @see https://eslint.org/docs/rules/no-loss-of-precision
-   * @see @typescript-eslint/no-loss-of-precision
-   */
   'no-loss-of-precision': hasTypeScript ? 'off' : 'error',
 
-  /**
-   * prevents the use of multiple code point characters in regexp
-   *
-   * @see https://eslint.org/docs/rules/no-misleading-character-class
-   */
   'no-misleading-character-class': 'warn',
 
-  /**
-   * prevents calling certain native objects as function or class
-   *
-   * @see https://eslint.org/docs/rules/no-obj-calls
-   * @see ts(2349)
-   */
   'no-obj-calls': hasTypeScript ? 'off' : 'error',
 
-  /**
-   * prevents returning from within a promise executor
-   *
-   * @see https://eslint.org/docs/rules/no-promise-executor-return
-   */
   'no-promise-executor-return': 'error',
 
-  /**
-   * use Object.prototype.method instead of foo.method
-   *
-   * @see https://eslint.org/docs/rules/no-prototype-builtins
-   */
   'no-prototype-builtins': 'error',
 
-  /**
-   * disallows arbitrary number of spaces in regex. use ` {3}` instead
-   *
-   * @see https://eslint.org/docs/rules/no-regex-spaces
-   */
   'no-regex-spaces': 'warn',
 
-  /**
-   * disallow return on setters as its nonsensical
-   *
-   * @see https://eslint.org/docs/rules/
-   * @see ts(2408)
-   */
   'no-setter-return': hasTypeScript ? 'off' : 'error',
 
-  /**
-   * prevents accidental holes in arrays
-   *
-   * @see https://eslint.org/docs/rules/no-sparse-arrays
-   */
   'no-sparse-arrays': 'warn',
 
-  /**
-   * detects strings that probably should be template literals
-   *
-   * @see https://eslint.org/docs/rules/no-template-curly-in-string
-   */
   'no-template-curly-in-string': 'warn',
 
-  /**
-   * warns on unexpected multiline statements (mostly semicolon-free related)
-   *
-   * @see https://eslint.org/docs/rules/no-unexpected-multiline
-   */
   'no-unexpected-multiline': 'warn',
 
-  /**
-   * prevents unreachable code
-   *
-   * @see https://eslint.org/docs/rules/no-unreachable
-   * @see ts(7027)
-   */
   'no-unreachable': hasTypeScript ? 'off' : 'warn',
 
-  /**
-   * off because taken care of by sonarjs/no-one-iteration-loop
-   *
-   * @see https://eslint.org/docs/rules/no-unreachable-loop
-   * @see sonarjs/no-one-iteration-loop
-   */
   'no-unreachable-loop': 'off',
 
-  /**
-   * prevents usage of unsafe finally in try/catch
-   *
-   * @see https://eslint.org/docs/rules/no-unsafe-finally
-   */
   'no-unsafe-finally': 'error',
 
-  /**
-   * prevents cases of unsafe negation
-   *
-   * @see https://eslint.org/docs/rules/no-unsafe-negation
-   * @see ts(2365)
-   * @see ts(2360)
-   * @see ts(2358)
-   */
   'no-unsafe-negation': hasTypeScript ? 'off' : 'warn',
 
-  /**
-   * prevents self-repeating regexp
-   *
-   * @see https://eslint.org/docs/rules/no-useless-backreference
-   */
   'no-useless-backreference': 'warn',
 
-  /**
-   * prevents subtle race conditions in async code
-   *
-   * @see https://eslint.org/docs/rules/require-atomic-updates
-   */
   'require-atomic-updates': 'warn',
 
-  /**
-   * off because handled by prettier
-   *
-   * @see https://eslint.org/docs/rules/semi
-   * @see @typescript-eslint/semi
-   */
   semi: 'off',
 
-  /**
-   * off because handled by prettier
-   *
-   * @see https://eslint.org/docs/rules/space-before-function-paren
-   * @see @typescript-eslint/space-before-function-paren
-   */
   'space-before-function-paren': 'off',
 
-  /**
-   * prevents typos when comparing to types
-   *
-   * @see https://eslint.org/docs/rules/valid-typeof
-   *
-   * @see ts(2367)
-   */
   'valid-typeof': hasTypeScript ? 'off' : 'warn',
 });
 
-/**
- * @see https://eslint.org/docs/rules/#best-practices
- */
 const getBestPractices = ({ typescript: { hasTypeScript } }) => ({
-  /**
-   * off because opinionated
-   *
-   * @see https://eslint.org/docs/rules/accessor-pairs
-   */
   'accessor-pairs': 'off',
 
-  /**
-   * enforces consistent return in array methods
-   *
-   * @see https://eslint.org/docs/rules/array-callback-return
-   */
   'array-callback-return': hasTypeScript
     ? 'off'
     : [
@@ -387,76 +137,24 @@ const getBestPractices = ({ typescript: { hasTypeScript } }) => ({
         },
       ],
 
-  /**
-   * off because prefer-const
-   *
-   * @see https://eslint.org/docs/rules/block-scoped-var
-   * @see prefer-const
-   */
   'block-scoped-var': 'off',
 
-  /**
-   * off because rarely applicable
-   *
-   * @see https://eslint.org/docs/rules/class-methods-use-this
-   */
   'class-methods-use-this': 'off',
 
-  /**
-   * off because handled by sonarjs/cognitive-complexity
-   *
-   * @see https://eslint.org/docs/rules/complexity
-   * @see sonarjs/cognitive-complexity
-   */
   complexity: 'off',
 
-  /**
-   * enforces consistent return
-   *
-   * off due to false positives
-   *
-   * @see https://eslint.org/docs/rules/consistent-return
-   */
   'consistent-return': 'off',
 
-  /**
-   * prefer curly braces for clarity
-   *
-   * @see https://eslint.org/docs/rules/curly
-   */
   curly: ['warn', 'all'],
 
-  /**
-   * avoids unexpected side effects of switches without default
-   *
-   * @see https://eslint.org/docs/rules/default-case
-   */
   'default-case': hasTypeScript ? 'off' : 'error',
 
-  /**
-   * prevents uncommon ways of writing switch
-   *
-   * @see https://eslint.org/docs/rules/default-case-last
-   */
   'default-case-last': 'error',
 
-  /**
-   * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/default-param-last.md
-   * @see @typescript-eslint/default-param-last
-   */
   'default-param-last': hasTypeScript ? 'off' : 'error',
 
-  /**
-   * off because prettier territory
-   *
-   * @see https://eslint.org/docs/rules/dot-location
-   */
   'dot-location': 'off',
 
-  /**
-   * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/dot-notation.md
-   * @see @typescript-eslint/dot-notation
-   */
   'dot-notation': hasTypeScript ? 'off' : 'warn',
 
   /**
@@ -466,102 +164,32 @@ const getBestPractices = ({ typescript: { hasTypeScript } }) => ({
    */
   eqeqeq: 'warn',
 
-  /**
-   * off because opinionated
-   *
-   * @see https://eslint.org/docs/rules/grouped-accessor-pairs
-   */
   'grouped-accessor-pairs': 'off',
 
-  /**
-   * warns about unexpected behaviour
-   *
-   * @see https://eslint.org/docs/rules/guard-for-in
-   */
   'guard-for-in': 'warn',
 
-  /**
-   * off because abitrary
-   *
-   * @see https://eslint.org/docs/rules/max-classes-per-file
-   */
   'max-classes-per-file': 'off',
 
-  /**
-   * prevents potentially accidentally blocking code
-   *
-   * @see https://eslint.org/docs/rules/no-alert
-   */
-  'no-alert': 'error',
+  'no-alert': 'warn',
 
-  /**
-   * forbidden in strict mode anyways
-   *
-   * @see https://eslint.org/docs/rules/no-caller
-   */
   'no-caller': 'error',
 
-  /**
-   * disallows declarations in switch cases due to potentially unexpected
-   * behaviour
-   *
-   * @see https://eslint.org/docs/rules/no-case-declarations
-   */
   'no-case-declarations': 'warn',
 
-  /**
-   * disallows returning in constructors
-   *
-   * @see https://eslint.org/docs/rules/no-constructor-return
-   */
   'no-constructor-return': hasTypeScript ? 'off' : 'error',
 
-  /**
-   * requires regex literals to escape division operators
-   *
-   * @see https://eslint.org/docs/rules/no-div-regex
-   */
   'no-div-regex': 'warn',
 
-  /**
-   * prefer early return
-   *
-   * @see https://eslint.org/docs/rules/no-else-return
-   */
   'no-else-return': 'warn',
 
-  /**
-   * @see https://eslint.org/docs/rules/no-empty-function
-   * @see @typescript-eslint/no-empty-function
-   */
   'no-empty-function': hasTypeScript ? 'off' : 'error',
 
-  /**
-   * disallows empty destructuring
-   *
-   * @see https://eslint.org/docs/rules/no-empty-pattern
-   */
   'no-empty-pattern': 'warn',
 
-  /**
-   * disallow unsafe null comparison
-   *
-   * @see https://eslint.org/docs/rules/no-eq-null
-   */
   'no-eq-null': 'error',
 
-  /**
-   * disallows eval
-   *
-   * @see https://eslint.org/docs/rules/no-eval
-   */
   'no-eval': 'error',
 
-  /**
-   * prevents extending native prototypes
-   *
-   * @see https://eslint.org/docs/rules/no-extend-native
-   */
   'no-extend-native': 'error',
 
   /**
