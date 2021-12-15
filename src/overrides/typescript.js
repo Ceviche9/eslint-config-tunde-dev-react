@@ -275,14 +275,14 @@ const getTypeScriptRules = ({
    *
    * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/explicit-member-accessibility.md
    */
-  '@typescript-eslint/explicit-member-accessibility': 'error',
+  '@typescript-eslint/explicit-member-accessibility': 'off',
 
   /**
    * ensures exported functions are strongly typed
    *
    * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/explicit-module-boundary-types.md
    */
-  '@typescript-eslint/explicit-module-boundary-types': 'error',
+  '@typescript-eslint/explicit-module-boundary-types': 'off',
 
   /**
    * off because prettier takes care of that
@@ -472,7 +472,7 @@ const getTypeScriptRules = ({
    */
   ...(isCreateReactApp
     ? null
-    : { '@typescript-eslint/no-floating-promises': 'error' }),
+    : { '@typescript-eslint/no-floating-promises': 'off' }),
 
   /**
    * prevents potentially unintended loops
@@ -550,14 +550,7 @@ const getTypeScriptRules = ({
    *
    * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-misused-promises.md
    */
-  '@typescript-eslint/no-misused-promises': [
-    'warn',
-    {
-      checksConditionals: true,
-      checksVoidReturn: true,
-    },
-  ],
-
+  '@typescript-eslint/no-misused-promises': 'off',
   /**
    * warns when using module/namespace syntax - use import/export instead
    *
@@ -907,7 +900,7 @@ const getTypeScriptRules = ({
    *
    * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-confusing-void-expression.md
    */
-  '@typescript-eslint/no-confusing-void-expression': 'warn',
+  '@typescript-eslint/no-confusing-void-expression': 'off',
 
   /**
    * off because nonsensical

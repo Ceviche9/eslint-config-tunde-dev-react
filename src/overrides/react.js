@@ -223,7 +223,7 @@ const createReactRules = ({
    *
    * @see https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-boolean-value.md
    */
-  'react/jsx-boolean-value': 'error',
+  'react/jsx-boolean-value': 'off',
 
   /**
    * off because prettier takes care of it
