@@ -216,13 +216,7 @@ const createReactRules = ({
    *
    * @see https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/function-component-definition.md
    */
-  'react/function-component-definition': [
-    'warn',
-    {
-      namedComponents: 'function-declaration' | 'function-expression' | 'arrow-function',
-      unnamedComponents: 'function-expression' | 'function-declaration'
-    },
-  ],
+  'react/function-component-definition': 'off',
 
   /**
    * prevents unecessary code
