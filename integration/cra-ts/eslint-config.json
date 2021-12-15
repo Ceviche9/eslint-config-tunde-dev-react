@@ -27,7 +27,7 @@
         "react/function-component-definition": [
           1,
           {
-            "namedComponents": "function-declaration",
+            "namedComponents":  ["function-declaration", "arrow-function"],
             "unnamedComponents": "arrow-function"
           }
         ],
@@ -232,7 +232,7 @@
         "@typescript-eslint/dot-notation": 2,
         "@typescript-eslint/explicit-function-return-type": 0,
         "@typescript-eslint/explicit-member-accessibility": 2,
-        "@typescript-eslint/explicit-module-boundary-types": 2,
+        "@typescript-eslint/explicit-module-boundary-types": 0,
         "@typescript-eslint/func-call-spacing": 0,
         "@typescript-eslint/indent": 0,
         "@typescript-eslint/init-declarations": 0,

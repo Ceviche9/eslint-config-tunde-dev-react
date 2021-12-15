@@ -40,12 +40,7 @@ const getRocketseatRules = ({ typescript: { hasTypeScript } }) => ({
     }
   ],
   "import/prefer-default-export": "off",
-  "@typescript-eslint/explicit-function-return-type": [
-    "warn",
-    {
-      "allowExpressions": true
-    }
-  ],
+  "@typescript-eslint/explicit-function-return-type": "off",
   "@typescript-eslint/camelcase": "off"
 }
 )
