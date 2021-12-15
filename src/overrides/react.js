@@ -219,8 +219,8 @@ const createReactRules = ({
   'react/function-component-definition': [
     'warn',
     {
-      namedComponents: 'arrow-function',
-      unnamedComponents: 'function-declaration',
+      namedComponents: "function-declaration" | "function-expression" | "arrow-function" ,
+      unnamedComponents: "function-expression" | "arrow-function"
     },
   ],
 
