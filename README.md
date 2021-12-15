@@ -30,6 +30,11 @@ Unless you set [`eslint.ignoreDuringBuilds`](https://nextjs.org/docs/api-referen
 
 I _heavily recommend_ doing so, as the Next.js internal eslint-config contains less features and is far less strict.
 
+### With TypeScript
+
+- `@typescript-eslint/parser`
+- `@typescript-eslint/eslint-plugin`
+
 # Setup
 
 ```js
