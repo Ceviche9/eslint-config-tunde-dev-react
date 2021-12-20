@@ -141,19 +141,13 @@ list, check out the source.
 
 - `const { createTSOverride } = require('eslint-config-galex/src/overrides/typescript')`
 - `const { createReactOverride } = require('eslint-config-galex/src/overrides/react')`
-- `const { createJestOverride } = require('eslint-config-galex/src/overrides/jest')`
-- `const { createStorybookOverride } = require('eslint-config-galex/src/overrides/storybook')`
 
 > Please note that the test override should always come last.
 
 ### Rulesets
 
 - `const { createEslintCoreRules } = require('eslint-config-galex/src/rulesets/eslint-core')`
-- `const { createImportRules } = require('eslint-config-galex/src/rulesets/import')`
 - `const { createNextJsRules } = require('eslint-config-galex/src/rulesets/next')`
-- `const { createPromiseRules } = require('eslint-config-galex/src/rulesets/promise')`
-- `const { createSonarjsRules } = require('eslint-config-galex/src/rulesets/sonarjs')`
-- `const { createUnicornRules } = require('eslint-config-galex/src/rulesets/unicorn')`
 
 # List of included opinions
 
