@@ -2,7 +2,9 @@
 
 ## About the project 
 
-This project i made base on [eslint-config-galex](https://github.com/ljosberinn/eslint-config-galex), but here you can find some of the settings i found in the templates of the rocketseat course challenges.
+> This project i made base on [eslint-config-galex](https://github.com/ljosberinn/eslint-config-galex).
+
+## How to use
 
 ```sh
 yarn add -D eslint-config-galex eslint
