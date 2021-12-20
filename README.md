@@ -142,14 +142,11 @@ list, check out the source.
 - `const { createTSOverride } = require('eslint-config-galex/src/overrides/typescript')`
 - `const { createReactOverride } = require('eslint-config-galex/src/overrides/react')`
 
-> Please note that the test override should always come last.
-
 ### Rulesets
 
 - `const { createEslintCoreRules } = require('eslint-config-galex/src/rulesets/eslint-core')`
 - `const { createNextJsRules } = require('eslint-config-galex/src/rulesets/next')`
 
-# List of included opinions
 
 ## TypeScript:
 
