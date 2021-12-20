@@ -59,11 +59,7 @@ All rules are commented and link to their docs.
 - [x] Next.js
 - [x] TypeScript
 - [x] Node.js
-- [x] jest
-- [x] jest-dom
-- [x] @testing-library
 - [x] prettier
-- [x] storybook
 
 # Customization
 
